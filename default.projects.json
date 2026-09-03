@@ -1,0 +1,11 @@
+{
+  "name": "luau-test-framework",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "TestFramework": {
+        "$path": "src"
+      }
+    }
+  }
+}
