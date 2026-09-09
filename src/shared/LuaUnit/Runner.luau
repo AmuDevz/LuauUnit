@@ -2,8 +2,8 @@ local Runner = {}
 
 function Runner.Run(contTable)
 	if contTable.__tests == nil then
-		return
-	end -- error message
+		error("Given table is nil " .. contTable.__tests)
+	end
 
 	local testStatus = {}
 

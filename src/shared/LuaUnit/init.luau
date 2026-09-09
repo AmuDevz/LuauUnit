@@ -1,5 +1,11 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Test = require(ReplicatedStorage.Shared.LuaUnit)
-Test.Fact.Register()
-Test.Runner.Run()
-Test.Assert.Equal()
+local init = {}
+
+local Fact = require(script.Fact)
+local Assert = require(script.Assert)
+local Runner = require(script.Runner)
+
+init.Fact = Fact
+init.Assert = Assert
+init.Runner = Runner
+
+return init
