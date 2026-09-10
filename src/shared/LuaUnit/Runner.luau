@@ -25,6 +25,7 @@ local Runner = {}
 export type TestResult = {
 	passed: boolean,
 	error: string?,
+	duration: number,
 }
 
 function Runner.Run(contTable: { [any]: any }): { [string]: TestResult }
@@ -35,10 +36,14 @@ function Runner.Run(contTable: { [any]: any }): { [string]: TestResult }
 	local testStatus: { [string]: TestResult } = {}
 
 	for name: string, func: () -> () in pairs(contTable.__tests) do
+		local startTime = os.clock()
 		local ok, err = pcall(func)
+		local duration = os.clock() - startTime
+
 		testStatus[name] = {
 			passed = ok,
 			error = err,
+			duration = duration,
 		}
 	end
 

@@ -4,5 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local calcTests = require(script.Parent.Tests.CalculatorTests)
 local Runner = require(ReplicatedStorage.Shared.LuaUnit.Runner)
+local Reporter = require(ReplicatedStorage.Shared.LuaUnit.Reporter)
 
-print(Runner.Run(calcTests))
+local results = Runner.Run(calcTests)
+Reporter.Print(results)
